@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ScheduleComponent, ViewsDirective, ViewDirective, Day, Week, WorkWeek, Month, Agenda, Inject, Resize, DragAndDrop } from '@syncfusion/ej2-react-schedule';
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 
-import { scheduleData } from '../data/dummy';
+// import { scheduleData } from '../data/dummy';
 import { Header } from '../components';
 
-// eslint-disable-next-line react/destructuring-assignment
 const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
 
 const Scheduler = () => {
-  const [scheduleObj, setScheduleObj] = useState();
+  const [selectedDate, setSelectedDate] = useState(new Date()); // State to keep track of the selected date
+  const [scheduleObj, setScheduleObj] = useState(null);
+
+  useEffect(() => {
+    // Ensure that whenever selectedDate changes, we update the schedule component's selectedDate as well
+    if (scheduleObj) {
+      scheduleObj.selectedDate = selectedDate;
+      scheduleObj.dataBind();
+    }
+  }, [selectedDate, scheduleObj]);
 
   const change = (args) => {
-    scheduleObj.selectedDate = args.value;
-    scheduleObj.dataBind();
+    setSelectedDate(args.value); // Update state when date is changed
   };
 
   const onDragStart = (arg) => {
-    // eslint-disable-next-line no-param-reassign
     arg.navigation.enable = true;
   };
 
@@ -27,26 +33,24 @@ const Scheduler = () => {
       <ScheduleComponent
         height="650px"
         ref={(schedule) => setScheduleObj(schedule)}
-        selectedDate={new Date(2021, 0, 10)}
-        eventSettings={{ dataSource: scheduleData }}
+        selectedDate={selectedDate}
+        // eventSettings={{ dataSource: scheduleData }}
         dragStart={onDragStart}
       >
         <ViewsDirective>
-          { ['Day', 'Week', 'WorkWeek', 'Month', 'Agenda'].map((item) => <ViewDirective key={item} option={item} />)}
+          {['Day', 'Week', 'WorkWeek', 'Month', 'Agenda'].map((item) => <ViewDirective key={item} option={item} />)}
         </ViewsDirective>
         <Inject services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop]} />
       </ScheduleComponent>
       <PropertyPane>
-        <table
-          style={{ width: '100%', background: 'white' }}
-        >
+        <table style={{ width: '100%', background: 'white' }}>
           <tbody>
             <tr style={{ height: '50px' }}>
               <td style={{ width: '100%' }}>
                 <DatePickerComponent
-                  value={new Date(2021, 0, 10)}
+                  value={selectedDate}
                   showClearButton={false}
-                  placeholder="Current Date"
+                  placeholder="Select Date"
                   floatLabelType="Always"
                   change={change}
                 />

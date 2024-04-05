@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
@@ -8,9 +8,18 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
+import Myprofile from './components/Myprofile';
+import Logout from './components/Logout';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Coupons from './pages/Coupons';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
+import Products from './pages/Products';
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  
 
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
@@ -20,6 +29,8 @@ const App = () => {
       setCurrentMode(currentThemeMode);
     }
   }, []);
+
+ 
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
@@ -63,33 +74,50 @@ const App = () => {
             <div>
               {themeSettings && (<ThemeSettings />)}
 
-              <Routes>
-                {/* dashboard  */}
-                <Route path="/" element={(<Ecommerce />)} />
-                <Route path="/ecommerce" element={(<Ecommerce />)} />
+              
+                <Routes>
+                  {/* dashboard  */}
+                  <Route path="/" element={(<Ecommerce />)} />
+                  <Route path="/ecommerce" element={(<Ecommerce />)} />
 
-                {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                  {/* pages  */}
+                  <Route path="/orders" element={<Orders />} />
+                  <Route path="/employees" element={<Employees />} />
+                  <Route path="/customers" element={<Customers />} />
+                  <Route path='/products' element={<Products/>}/>
 
-                {/* apps  */}
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editor" element={<Editor />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/color-picker" element={<ColorPicker />} />
+                  {/* apps  */}
+                  <Route path="/kanban" element={<Kanban />} />
+                  <Route path="/editor" element={<Editor />} />
+                  <Route path="/calendar" element={<Calendar />} />
+                  <Route path="/color-picker" element={<ColorPicker />} />
+                  <Route path='/coupons' element={<Coupons/>}/>
+                  <Route path='/forgot-password' element={<ForgotPassword/>}/>
+                  <Route path='/Reset-password' element={<ResetPassword/>}/>
 
-                {/* charts  */}
-                <Route path="/line" element={<Line />} />
-                <Route path="/area" element={<Area />} />
-                <Route path="/bar" element={<Bar />} />
-                <Route path="/pie" element={<Pie />} />
-                <Route path="/financial" element={<Financial />} />
-                <Route path="/color-mapping" element={<ColorMapping />} />
-                <Route path="/pyramid" element={<Pyramid />} />
-                <Route path="/stacked" element={<Stacked />} />
-
-              </Routes>
+                  {/* charts  */}
+                  <Route path="/line" element={<Line />} />
+                  <Route path="/area" element={<Area />} />
+                  <Route path="/bar" element={<Bar />} />
+                  <Route path="/pie" element={<Pie />} />
+                  <Route path="/financial" element={<Financial />} />
+                  <Route path="/color-mapping" element={<ColorMapping />} />
+                  <Route path="/pyramid" element={<Pyramid />} />
+                  <Route path="/stacked" element={<Stacked />} />
+                  {/* profile */}
+                  <Route path='/myprofile' element={<Myprofile />}/>
+                  {/* logout */}
+                  <Route path='/logout' element={<Logout />}/>
+                  <Route path="/signup" element={<Signup />} />
+                  <Route path="/login" element={<Login />} />
+                </Routes>
+              
+                
+                  
+                  
+                  
+                
+              
             </div>
             <Footer />
           </div>

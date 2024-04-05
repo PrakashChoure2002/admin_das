@@ -2,14 +2,15 @@ import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
+// import {  } from "react-icons/bi";
 import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { RiContactsLine, RiStockLine,RiCoupon2Line,RiLockPasswordFill } from 'react-icons/ri';
+import { MdOutlineSupervisorAccount,MdOutlinePassword } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
+// import { PiPasswordFill } from "react-icons/pi";
 import { TiTick } from 'react-icons/ti';
 import { GiLouvrePyramid } from 'react-icons/gi';
-import { GrLocation } from 'react-icons/gr';
+import { GrLocation,GrProductHunt  } from 'react-icons/gr';
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
 import avatar3 from './avatar3.png';
@@ -495,6 +496,10 @@ export const links = [
         name: 'customers',
         icon: <RiContactsLine />,
       },
+      {
+        name: 'products',
+        icon: <GrProductHunt  />,
+      },
     ],
   },
   {
@@ -508,14 +513,30 @@ export const links = [
         name: 'kanban',
         icon: <BsKanban />,
       },
+      // {
+      //   name: 'editor',
+      //   icon: <FiEdit />,
+      // },
       {
-        name: 'editor',
-        icon: <FiEdit />,
+        name: 'Coupons',
+        icon: <RiCoupon2Line />,
       },
+      // {
+      //   name: 'color-picker',
+      //   icon: <BiColorFill />,
+      // },
       {
-        name: 'color-picker',
-        icon: <BiColorFill />,
+        name: 'forgot-password',
+        icon: <RiLockPasswordFill/>,
       },
+
+      {
+        name: 'Reset-password',
+        icon: <MdOutlinePassword/>,
+      },
+
+      
+      
     ],
   },
   {
@@ -525,10 +546,10 @@ export const links = [
         name: 'line',
         icon: <AiOutlineStock />,
       },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
+      // {
+      //   name: 'area',
+      //   icon: <AiOutlineAreaChart />,
+      // },
 
       {
         name: 'bar',
@@ -538,22 +559,22 @@ export const links = [
         name: 'pie',
         icon: <FiPieChart />,
       },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
-      },
+      // {
+      //   name: 'financial',
+      //   icon: <RiStockLine />,
+      // },
+      // {
+      //   name: 'color-mapping',
+      //   icon: <BsBarChart />,
+      // },
+      // {
+      //   name: 'pyramid',
+      //   icon: <GiLouvrePyramid />,
+      // },
+      // {
+      //   name: 'stacked',
+      //   icon: <AiOutlineBarChart />,
+      // },
     ],
   },
 ];
@@ -3041,32 +3062,32 @@ export const scheduleData = [
 
 export const lineChartData = [
   [
-    { x: new Date(2005, 0, 1), y: 21 },
-    { x: new Date(2006, 0, 1), y: 24 },
-    { x: new Date(2007, 0, 1), y: 36 },
-    { x: new Date(2008, 0, 1), y: 38 },
-    { x: new Date(2009, 0, 1), y: 54 },
-    { x: new Date(2010, 0, 1), y: 57 },
-    { x: new Date(2011, 0, 1), y: 70 },
+    { x: new Date(2024, 0, 1), y: 21 },
+    { x: new Date(2025, 0, 1), y: 24 },
+    { x: new Date(2026, 0, 1), y: 36 },
+    { x: new Date(2027, 0, 1), y: 38 },
+    { x: new Date(2028, 0, 1), y: 54 },
+    { x: new Date(2029, 0, 1), y: 57 },
+    { x: new Date(2030, 0, 1), y: 70 },
   ],
   [
-    { x: new Date(2005, 0, 1), y: 28 },
-    { x: new Date(2006, 0, 1), y: 44 },
-    { x: new Date(2007, 0, 1), y: 48 },
-    { x: new Date(2008, 0, 1), y: 50 },
-    { x: new Date(2009, 0, 1), y: 66 },
-    { x: new Date(2010, 0, 1), y: 78 },
-    { x: new Date(2011, 0, 1), y: 84 },
+    { x: new Date(2023, 0, 1), y: 28 },
+    { x: new Date(2024, 0, 1), y: 44 },
+    { x: new Date(2025, 0, 1), y: 48 },
+    { x: new Date(2026, 0, 1), y: 50 },
+    { x: new Date(2027, 0, 1), y: 66 },
+    { x: new Date(2028, 0, 1), y: 78 },
+    { x: new Date(2029, 0, 1), y: 84 },
   ],
 
   [
-    { x: new Date(2005, 0, 1), y: 10 },
-    { x: new Date(2006, 0, 1), y: 20 },
-    { x: new Date(2007, 0, 1), y: 30 },
-    { x: new Date(2008, 0, 1), y: 39 },
-    { x: new Date(2009, 0, 1), y: 50 },
-    { x: new Date(2010, 0, 1), y: 70 },
-    { x: new Date(2011, 0, 1), y: 100 },
+    { x: new Date(2024, 0, 1), y: 10 },
+    { x: new Date(2025, 0, 1), y: 20 },
+    { x: new Date(2026, 0, 1), y: 30 },
+    { x: new Date(2027, 0, 1), y: 39 },
+    { x: new Date(2028, 0, 1), y: 50 },
+    { x: new Date(2029, 0, 1), y: 70 },
+    { x: new Date(2030, 0, 1), y: 100 },
   ],
 ];
 export const dropdownData = [
@@ -3095,7 +3116,7 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'Germany',
+    name: 'Sales',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
@@ -3103,7 +3124,7 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[1],
     xName: 'x',
     yName: 'y',
-    name: 'England',
+    name: 'Profit',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
@@ -3111,7 +3132,7 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[2],
     xName: 'x',
     yName: 'y',
-    name: 'India',
+    name: 'loss',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },

@@ -5,7 +5,8 @@ import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+// import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import {earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData} from './Charts/ecommerce'
 import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/product9.jpg';
 
@@ -15,8 +16,11 @@ const DropDown = ({ currentMode }) => (
   </div>
 );
 
+
+
 const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
+   
 
   return (
     <div className="mt-24">
@@ -208,9 +212,9 @@ const Ecommerce = () => {
         <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
             <p className="text-xl font-semibold">Weekly Stats</p>
-            <button type="button" className="text-xl font-semibold text-gray-500">
+            {/* <button type="button" className="text-xl font-semibold text-gray-500">
               <IoIosMore />
-            </button>
+            </button> */}
           </div>
 
           <div className="mt-10 ">
@@ -239,7 +243,7 @@ const Ecommerce = () => {
           </div>
 
         </div>
-        <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
+        {/* <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
             <p className="text-xl font-semibold">MedicalPro Branding</p>
             <button type="button" className="text-xl font-semibold text-gray-400">
@@ -248,17 +252,17 @@ const Ecommerce = () => {
           </div>
           <p className="text-xs cursor-pointer hover:drop-shadow-xl font-semibold rounded-lg w-24 bg-orange-400 py-0.5 px-2 text-gray-200 mt-10">
             16 APR, 2021
-          </p>
+          </p> */}
 
-          <div className="flex gap-4 border-b-1 border-color mt-6">
+          {/* <div className="flex gap-4 border-b-1 border-color mt-6">
             {medicalproBranding.data.map((item) => (
               <div key={item.title} className="border-r-1 border-color pr-4 pb-2">
                 <p className="text-xs text-gray-400">{item.title}</p>
                 <p className="text-sm">{item.desc}</p>
               </div>
             ))}
-          </div>
-          <div className="border-b-1 border-color pb-4 mt-2">
+          </div> */}
+          {/* <div className="border-b-1 border-color pb-4 mt-2">
             <p className="text-md font-semibold mb-2">Teams</p>
 
             <div className="flex gap-4">
@@ -272,16 +276,16 @@ const Ecommerce = () => {
                 </p>
               ))}
             </div>
-          </div>
-          <div className="mt-2">
+          </div> */}
+          {/* <div className="mt-2">
             <p className="text-md font-semibold mb-2">Leaders</p>
             <div className="flex gap-4">
               {medicalproBranding.leaders.map((item, index) => (
                 <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
               ))}
             </div>
-          </div>
-          <div className="flex justify-between items-center mt-5 border-t-1 border-color">
+          </div> */}
+          {/* <div className="flex justify-between items-center mt-5 border-t-1 border-color">
             <div className="mt-3">
               <Button
                 color="white"
@@ -292,9 +296,9 @@ const Ecommerce = () => {
             </div>
 
             <p className="text-gray-400 text-sm">36 Recent Transactions</p>
-          </div>
-        </div>
-        <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
+          </div> */}
+        {/* </div> */}
+        {/* <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
             <p className="text-xl font-semibold">Daily Activities</p>
             <button type="button" className="text-xl font-semibold text-gray-500">
@@ -324,7 +328,7 @@ const Ecommerce = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
